@@ -1,0 +1,475 @@
+<%- include('header',{pageTitle:'Trang chủ'}) %>
+
+<div class="main">
+
+    <div class="men_text">
+        <h1>Đồng Hồ<span>Bạch Dương</span><br></h1>
+    </div>
+
+    <div class="main_image">
+        <img src="/main_img1.jpg">
+    </div>
+
+</div>
+
+<p>
+    Đồng hồ đeo tay Virtuoso có thiết kế nổi bật, tinh tế và sang trọng <br>với dây đeo bằng kim loại độ bền cao, khớp cài 2 nút bấm<br>
+     Sản phẩm chắc chắn sẽ đem lại sự hài lòng cho khách hàng khi sử dụng và tối đa hóa <br>thương hiệu của bạn trên thị trường.
+
+    Đồng hồ có thiết kế sang trọng, tinh tế và thời trang, <br>
+    được làm từ chất liệu kim loại có độ bền cao sẽ giúp thương hiệu
+    <br> trở thành một nhãn hàng được yêu thích trên thị trường và dễ dàng đạt tới thành công.
+</p>
+
+<div class="main_btn">
+    <a href="#">Order Now</a>
+    <i class="fa-solid fa-angle-right"></i>
+</div>
+
+</section>
+
+
+
+<!--About-->
+
+<div class="about" id="About">
+<div class="about_main">
+
+    <div class="image">
+        <img src="/slider4.jpg">
+    </div>
+
+    <div class="about_text">
+        <h1><span>About</span>Us</h1>
+        <h3>Why Choose us?</h3>
+        <p>
+            Đồng hồ đeo tay Virtuoso có thiết kế nổi bật, tinh tế và sang trọng <br>với dây đeo bằng kim loại độ bền cao, khớp cài 2 nút bấm<br>
+     Sản phẩm chắc chắn sẽ đem lại sự hài lòng cho khách hàng khi sử dụng và tối đa hóa <br>thương hiệu của bạn trên thị trường.
+
+    Đồng hồ có thiết kế sang trọng, tinh tế và thời trang, <br>
+    được làm từ chất liệu kim loại có độ bền cao sẽ giúp thương hiệu
+    <br> trở thành một nhãn hàng được yêu thích trên thị trường và dễ dàng đạt tới thành công.
+        </p>
+    </div>
+
+</div>
+
+<a href="#" class="about_btn">Order Now</a>
+
+</div>
+
+
+
+<!--Menu-->
+
+<div class="menu" id="Menu">
+<h1>Our<span>Menu</span></h1>
+
+<div class="menu_box">
+    <% products.forEach((product) => { %>
+      <div class="menu_card">
+        <div class="menu_image">
+            <a href="/products/<%= product.Id %>"><img src="/products/<%= product.Img %>"></a>
+        </div>
+  
+        <div class="small_card">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+  
+        <div class="menu_info">
+          <a href="/products/<%= product.Id %>"><h2><%= product.Name %></h2></a>
+          <p><%= product.ShortDes %></p>
+          <h3>$<%= product.Price %></h3>
+          <form action="/cart/products/<%= product.Id %>" method="POST">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" value="1" min="1">
+            <input type="hidden" id="price" name="price" value="<%= product.Price %>">
+            <input type="hidden" id="img" name="img" value="<%= product.Img %>">
+            <input type="hidden" id="name" name="name" value="<%= product.Name %>">
+            <button class="menu_btn" type="submit">Add to Cart</button>
+          </form>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+  
+  <!-- Hiển thị phân trang -->
+  <div class="pagination">
+    <% for (let i = 1; i <= totalPages; i++) { %>
+      <a href="/?page=<%= i %>&perPage=<%= perPage %>"><%= i %></a>
+    <% } %>
+  </div>
+  
+
+</div>
+
+
+
+
+<!--Gallary-->
+
+<div class="gallary" id="Gallary">
+<h1>Our<span>Gallary</span></h1>
+
+<div class="gallary_image_box">
+    <div class="gallary_image">
+        <img src="/1.jpg">
+
+        <h3>Watch</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+        </p>
+        <a href="#" class="gallary_btn">Order Now</a>
+    </div>
+
+    <div class="gallary_image">
+        <img src="/2.jpg">
+
+        <h3>Watch</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+        </p>
+        <a href="#" class="gallary_btn">Order Now</a>
+    </div>
+
+    <div class="gallary_image">
+        <img src="/3.jpg">
+
+        <h3>Watch</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+        </p>
+        <a href="#" class="gallary_btn">Order Now</a>
+    </div>
+
+    <div class="gallary_image">
+        <img src="/4.jpg">
+
+        <h3>Watch</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+        </p>
+        <a href="#" class="gallary_btn">Order Now</a>
+    </div>
+
+    <div class="gallary_image">
+        <img src="/9.jpg">
+
+        <h3>Watch</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+        </p>
+        <a href="#" class="gallary_btn">Order Now</a>
+    </div>
+
+    <div class="gallary_image">
+        <img src="/4.jpg">
+
+        <h3>Watch</h3>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi sint eveniet laboriosam 
+        </p>
+        <a href="#" class="gallary_btn">Order Now</a>
+    </div>
+
+</div>
+
+</div>
+
+
+
+
+<!--Review-->
+
+<div class="review" id="Review">
+<h1>Customer<span>Review</span></h1>
+
+<div class="review_box">
+    <div class="review_card">
+
+        <div class="review_profile">
+            <img src="/review_1.png">
+        </div>
+
+        <div class="review_text">
+            <h2 class="name">John Deo</h2>
+
+            <div class="review_icon">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+
+            <div class="review_social">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quam facere 
+                blanditiis in fugiat tempore necessitatibus aliquid. Id adipisci, rem corrupti 
+                asperiores distinctio delectus quae quia tenetur totam laboriosam quam. Lorem ipsum, 
+                dolor sit amet consectetur adipisicing elit. Dolores soluta ullam ipsa voluptates 
+                repudiandae dignissimos deleniti mollitia eum. Laudantium placeat velit nemo illo 
+               
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="review_card">
+
+        <div class="review_profile">
+            <img src="/review_2.png">
+        </div>
+
+        <div class="review_text">
+            <h2 class="name">Loi Nguyen</h2>
+
+            <div class="review_icon">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+
+            <div class="review_social">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quam facere 
+                blanditiis in fugiat tempore necessitatibus aliquid. Id adipisci, rem corrupti 
+                asperiores distinctio delectus quae quia tenetur totam laboriosam quam. Lorem ipsum, 
+                dolor sit amet consectetur adipisicing elit. Dolores soluta ullam ipsa voluptates 
+                repudiandae dignissimos deleniti mollitia eum. Laudantium placeat velit nemo illo 
+               
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="review_card">
+
+        <div class="review_profile">
+            <img src="/review_3.png">
+        </div>
+
+        <div class="review_text">
+            <h2 class="name">Hoàng Thu</h2>
+
+            <div class="review_icon">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+
+            <div class="review_social">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quam facere 
+                blanditiis in fugiat tempore necessitatibus aliquid. Id adipisci, rem corrupti 
+                asperiores distinctio delectus quae quia tenetur totam laboriosam quam. Lorem ipsum, 
+                dolor sit amet consectetur adipisicing elit. Dolores soluta ullam ipsa voluptates 
+                repudiandae dignissimos deleniti mollitia eum. Laudanti    pariatur. atque repellendus!
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="review_card">
+
+        <div class="review_profile">
+            <img src="/review_2.png">
+        </div>
+
+        <div class="review_text">
+            <h2 class="name">Lan Phùng</h2>
+
+            <div class="review_icon">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+            </div>
+
+            <div class="review_social">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+            </div>
+
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quam facere 
+                blanditiis in fugiat tempore necessitatibus aliquid. Id adipisci, rem corrupti 
+                asperiores distinctio delectus quae quia tenetur totam laboriosam quam. Lorem ipsum, 
+                dolor sit amet consectetur adipisicing elit. Dolores soluta ullam ipsa voluptates 
+                repudiandae dignissimos deleniti mollitia eum. Laudantium placeat velit nemo illo 
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+<!--Order-->
+
+<div class="order" id="Order">
+<h1><span>Order</span>Now</h1>
+
+<div class="order_main">
+
+    <div class="order_image">
+        <img src="/slider6.jpg">
+    </div>
+
+    <form action="#">
+
+        <div class="input">
+            <p>Name</p>
+            <input type="text" placeholder="you name">
+        </div>
+
+        <div class="input">
+            <p>Email</p>
+            <input type="email" placeholder="you email">
+        </div>
+
+        <div class="input">
+            <p>Number</p>
+            <input placeholder="you number">
+        </div>
+
+        <div class="input">
+            <p>How Much</p>
+            <input type="number" placeholder="how many order">
+        </div>
+
+        <div class="input">
+            <p>You Order</p>
+            <input placeholder="Watch name">
+        </div>
+
+        <div class="input">
+            <p>Address</p>
+            <input placeholder="you Address">
+        </div>
+
+        <a href="#" class="order_btn">Order Now</a>
+
+    </form>
+
+</div>
+
+</div>
+
+
+
+<!--Team-->
+
+<div class="team">
+<h1>Our<span>Trademark</span></h1>
+
+<div class="team_box">
+    <div class="profile">
+        <img src="/brand6.png">
+
+        <div class="info">
+            <h2 class="name">Rolex</h2>
+            <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+            <div class="team_icon">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="profile">
+        <img src="/brand7.png">
+
+        <div class="info">
+            <h2 class="name">Mido</h2>
+            <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+            <div class="team_icon">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="profile">
+        <img src="/brand8.png">
+
+        <div class="info">
+            <h2 class="name">white</h2>
+            <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+            <div class="team_icon">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="profile">
+        <img src="/brand3.png">
+
+        <div class="info">
+            <h2 class="name">stank</h2>
+            <p class="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+            <div class="team_icon">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+<!--Footer-->
+
+<%- include('footer') %>
